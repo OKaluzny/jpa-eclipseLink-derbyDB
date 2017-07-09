@@ -10,7 +10,8 @@ public class Main {
   public static void main(String[] args) {
 
     // 1-Creates an instance of book
-    Book book = new Book("H2G2", "The Hitchhiker's Guide to the Galaxy", 12.5F, "1-84023-742-2", 354, false);
+    Book book = new Book("Thermodynamics", "A section of physics that studies the nature of energy", 10.5F, "1-84023-542-8", 233, false);
+    Book book2 = new Book("Fast Cars", "The device and operating principle of a sports car", 12.5F, "1-84023-722-9", 354, true);
 
     // 2-Obtains an entity manager and a transaction
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
@@ -20,12 +21,15 @@ public class Main {
     EntityTransaction tx = em.getTransaction();
     tx.begin();
     em.persist(book);
+    em.persist(book2);
     tx.commit();
 
     // 4-Executes the named query
-    book = em.createNamedQuery("findBookH2G2", Book.class).getSingleResult();
+    book = em.createNamedQuery("findBookThermodynamics", Book.class).getSingleResult();
+    book2 = em.createNamedQuery("findBookCars", Book.class).getSingleResult();
 
     System.out.println("######### " + book.getDescription());
+    System.out.println("######### " + book2.getDescription());
 
     // 5-Closes the entity manager and the factory
     em.close();
