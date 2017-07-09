@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class BookIT {
 
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("chapter04TestPU");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaTest");
     private EntityManager em;
     private EntityTransaction tx;
 
