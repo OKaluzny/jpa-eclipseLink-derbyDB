@@ -5,7 +5,7 @@
 * Maven;
 * JUnit;
 * JPA;
-* EclipseLink (as JPA implementation);
+* EclipseLink (as JPA reference implementation);
 * JavaDB Relation Database;
 
 ### To run this application use:
